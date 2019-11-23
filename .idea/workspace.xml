@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a0e1b0c-3138-4ade-a43d-185ad7e557ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/notMNISTStarter.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/notMNISTStarter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MNISTStarter.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MNISTStarter.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MNISTStarter.py" beforeDir="false" afterPath="$PROJECT_DIR$/MNISTStarter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MNISTStarter.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Part1/MNISTStarter.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MNISTStarter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Part1/MNISTStarter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +21,11 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PC\Computer Science 4th Year\CPSC 501\Assignments\A4\Part1" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
