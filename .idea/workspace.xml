@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a0e1b0c-3138-4ade-a43d-185ad7e557ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MNISTStarter.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MNISTStarter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/A4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/A4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A4 - Nathan Chua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MNISTStarter.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MNISTStarter.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MNISTStarter.py" beforeDir="false" afterPath="$PROJECT_DIR$/MNISTStarter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
