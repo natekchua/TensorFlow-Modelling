@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a0e1b0c-3138-4ade-a43d-185ad7e557ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Part2/notMNISTStarter.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Part2/notMNISTStarter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/grabimage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/interactive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/predict.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/predict.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/predict_test.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part2/predict_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MNISTStarter.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Part1/MNISTStarter.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MNISTStarter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Part1/MNISTStarter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +59,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
