@@ -2,61 +2,59 @@ import sys
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
+from tensorflow import keras
 
 def main():
-     class_names, data = check_args()
-     x_test, y_test = data
-     print(f"--Load Model {sys.argv[2]}--")
-     #Load the model that should be in sys.argv[2]
-     model = None
-     pick = input(f"Pick test_image (0 -> {len(x_test)-1}):")
-     while pick.isdigit() and int(pick) >= 0 and int(pick) < len(x_test):
+    class_names, data = check_args()
+    x_test, y_test = data
+    print(f"--Load Model {sys.argv[2]}--")
+    # Load the model that should be in sys.argv[2]
+    model = keras.models.load_model(sys.argv[2])
+    pick = input(f"Pick test_image (0 -> {len(x_test) - 1}):")
+    while pick.isdigit() and int(pick) >= 0 and int(pick) < len(x_test):
         pick = int(pick)
         img = x_test[pick]
         guess = y_test[pick]
         print(f"--Should be Class {guess}--")
         predict(model, class_names, img, guess)
-        pick = input(f"Pick test_image (0 -> {len(x_test)-1}):")
-     print("Done")
+        pick = input(f"Pick test_image (0 -> {len(x_test) - 1}):")
+    print("Done")
+
 
 def predict(model, class_names, img, true_label):
     img = np.array([img])
-    #Replace these two lines with code to make a prediction
-    prediction = [1/10,1/10,1/10,1/10,1/10,1/10,1/10,1/10,1/10,1/10]
-    #Determine what the predicted label is
-    predicted_label = 0
-    plot(class_names, prediction, true_label, predicted_label, img[0])
+    # Replace these two lines with code to make a prediction
+    prediction = model.predict(img)
+    # Determine what the predicted label is
+    predicted_label = np.argmax(prediction)
+    plot(class_names, prediction[0], true_label, predicted_label, img[0])
     plt.show()
+main()
+
 
 def check_args():
-     if(len(sys.argv) == 1):
-        print("No arguments so using defaults")
-        if input("Y for MNIST, otherwise notMNIST:") == "Y":
-             sys.argv = ["predict.py", "MNIST", "MNIST.h5", "image.png", "0"]
-        else:
-             sys.argv = ["predict.py", "notMNIST", "notMNIST.h5", "image.png", "0"]
-     if(len(sys.argv) != 5):
-          print("Usage python predict.py <MNIST,notMNIST> <model.h5> <image.png> <prediction class index>")
-          sys.exit(1)
-     if sys.argv[1] == "MNIST":
-          print("--Dataset MNIST--")
-          class_names = list(range(10))
-          mnist = tf.keras.datasets.mnist
-          (x_train, y_train), (x_test, y_test) = mnist.load_data()
-          data = (x_test, y_test)
-     elif sys.argv[1] == "notMNIST":
-          print("--Dataset notMNIST--")
-          class_names = ["A","B","C","D","E","F","G","H","I","J"]
-          with np.load("notMNIST.npz", allow_pickle=True) as f:
+    if (len(sys.argv) != 3):
+        print("Usage python predict_test.py <MNIST,notMNIST> <model.h5>")
+        sys.exit(1)
+    if sys.argv[1] == "MNIST":
+        print("--Dataset MNIST--")
+        class_names = list(range(10))
+        mnist = tf.keras.datasets.mnist
+        (x_train, y_train), (x_test, y_test) = mnist.load_data()
+        data = (x_test, y_test)
+    elif sys.argv[1] == "notMNIST":
+        print("--Dataset notMNIST--")
+        class_names = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+        with np.load("notMNIST.npz", allow_pickle=True) as f:
             x_test, y_test = f['x_test'], f['y_test']
-          data = (x_test, y_test)
-     else:
-          print(f"Choose MNIST or notMNIST, not {sys.argv[1]}")
-          sys.exit(2)
-     if sys.argv[2][-3:] != ".h5":
-          print(f"{sys.argv[2]} is not a h5 extension")
-          sys.exit(3)
-     return class_names, data
+        data = (x_test, y_test)
+    else:
+        print(f"Choose MNIST or notMNIST, not {sys.argv[1]}")
+        sys.exit(2)
+    if sys.argv[2][-3:] != ".h5":
+        print(f"{sys.argv[2]} is not a h5 extension")
+        sys.exit(3)
+    return class_names, data
 
 def plot(class_names, prediction, true_label, predicted_label, img):
     plt.figure(figsize=(6,3))
