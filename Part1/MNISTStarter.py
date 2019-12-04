@@ -26,7 +26,12 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 print("--Fit model--")
 model.fit(x_train, y_train, epochs=8, verbose=2)
 
-print("--Evaluate model--")
+print("--Evaluate Train model--")
+model_loss, model_acc = model.evaluate(x_train,  y_train, verbose=2)
+print(f"Model Loss:    {model_loss:.2f}")
+print(f"Model Accuracy: {model_acc*100:.1f}%")
+
+print("--Evaluate Test model--")
 model_loss, model_acc = model.evaluate(x_test,  y_test, verbose=2)
 print(f"Model Loss:    {model_loss:.2f}")
 print(f"Model Accuracy: {model_acc*100:.1f}%")
