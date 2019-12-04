@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a0e1b0c-3138-4ade-a43d-185ad7e557ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Part2/image.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part1/MNISTStarter.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Part1/MNISTModel.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part1/MNISTStarter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Part1/MNISTModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/notMNISTStarter.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/notMNISTModel.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/notMNISTStarter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/notMNISTModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part2/predict.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Part2/predict.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
