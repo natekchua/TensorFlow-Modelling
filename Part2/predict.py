@@ -2,66 +2,65 @@ import sys
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-import pyscreenshot as ImageGrab
+from tensorflow import keras
+
 
 def main():
-     class_names = check_args()
-     print(f"--Load Model {sys.argv[2]}--")
-     #Load the model that should be in sys.argv[2]
-     model = None
-     print(f"--Load Image {sys.argv[3]}--")
-     img = plt.imread(sys.argv[3])
-     if np.amax(img.flatten()) > 1:
-          img = img/255
-     img = 1 - img
-     print(f"--Predict as Class {sys.argv[4]}--")
-     predict(model, class_names, img, int(sys.argv[4]))
+    class_names = check_args()
+    print(f"--Load Model {sys.argv[2]}--")
+    # Load the model that should be in sys.argv[2]
+    model = keras.models.load_model(sys.argv[2])
+    print(f"--Load Image {sys.argv[3]}--")
+    img = plt.imread(sys.argv[3])
+    if np.amax(img.flatten()) > 1:
+        img = img / 255
+    img = 1 - img
+    print(f"--Predict as Class {sys.argv[4]}--")
+    predict(model, class_names, img, int(sys.argv[4]))
+
 
 def predict(model, class_names, img, true_label):
     img = np.array([img])
-    #Replace these two lines with code to make a prediction
-    prediction = [1/10,1/10,1/10,1/10,1/10,1/10,1/10,1/10,1/10,1/10]
-    #Determine what the predicted label is
-    predicted_label = 0
-    plot(class_names, prediction, true_label, predicted_label, img[0])
+    prediction = model.predict(img)
+    predicted_label = np.argmax(prediction)
+    plot(class_names, prediction[0], true_label, predicted_label, img[0])
     plt.show()
+main()
+
 
 def check_args():
-     if(len(sys.argv) == 1):
-         print("No arguments so using defaults")
-         sys.argv = ["predict.py", "MNIST", "MNIST.h5", "image.png", input("Predict the class of image.png(index):")]
-     if(len(sys.argv) != 5):
-          print("Usage python predict.py <MNIST,notMNIST> <model.h5> <image.png> <prediction class index>")
-          sys.exit(1)
-     if sys.argv[1] == "MNIST":
-          print("--Dataset MNIST--")
-          class_names = list(range(10))
-     elif sys.argv[1] == "notMNIST":
-          print("--Dataset notMNIST--")
-          class_names = ["A","B","C","D","E","F","G","H","I","J"]
-     else:
-          print(f"Choose MNIST or notMNIST, not {sys.argv[1]}")
-          sys.exit(2)
-     if sys.argv[2][-3:] != ".h5":
-          print(f"{sys.argv[2]} is not a h5 extension")
-          sys.exit(3)
-     if sys.argv[3][-4:] != ".png":
-          print(f"{sys.argv[3]} is not a png extension")
-          sys.exit(3)
-     img = plt.imread(sys.argv[3])
-     if len(img.shape) != 2:
-          print("Image is not grey scale!")
-          sys.exit(4)
-     if img.shape != (28,28):
-          print("Image is not 28 by 28!")
-          sys.exit(4)
-     if not sys.argv[4].isdigit():
-          print(f"{sys.argv[4]} is not an integer (0-9)")
-          sys.exit(3)
-     if int(sys.argv[4]) < 0 or int(sys.argv[4]) > 9 :
-          print(f"{sys.argv[4]} is not an integer (0-9)")
-          sys.exit(3)
-     return class_names
+    if (len(sys.argv) != 5):
+        print("Usage python predict.py <MNIST,notMNIST> <model.h5> <image.png> <prediction class index>")
+        sys.exit(1)
+    if sys.argv[1] == "MNIST":
+        print("--Dataset MNIST--")
+        class_names = list(range(10))
+    elif sys.argv[1] == "notMNIST":
+        print("--Dataset notMNIST--")
+        class_names = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+    else:
+        print(f"Choose MNIST or notMNIST, not {sys.argv[1]}")
+        sys.exit(2)
+    if sys.argv[2][-3:] != ".h5":
+        print(f"{sys.argv[2]} is not a h5 extension")
+        sys.exit(3)
+    if sys.argv[3][-4:] != ".png":
+        print(f"{sys.argv[3]} is not a png extension")
+        sys.exit(3)
+    img = plt.imread(sys.argv[3])
+    if len(img.shape) != 2:
+        print("Image is not grey scale!")
+        sys.exit(4)
+    if img.shape != (28, 28):
+        print("Image is not 28 by 28!")
+        sys.exit(4)
+    if not sys.argv[4].isdigit():
+        print(f"{sys.argv[4]} is not an integer (0-9)")
+        sys.exit(3)
+    if int(sys.argv[4]) < 0 or int(sys.argv[4]) > 9:
+        print(f"{sys.argv[4]} is not an integer (0-9)")
+        sys.exit(3)
+    return class_names
 
 def plot(class_names, prediction, true_label, predicted_label, img):
     plt.figure(figsize=(6,3))
